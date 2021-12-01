@@ -134,7 +134,7 @@ st.sidebar.write("## Helium Hotspots")
 # earned = pd.DataFrame([{'HNT': str(round(total_earnings/100000000,2)), '$': str(round(total_earnings/100000000*helium_price,2))}, {'HNT': str(round((total_earnings/100000000)/len(new_hotspots),2)), '$': str(round(((total_earnings/100000000)/len(new_hotspots))*helium_price,2))}])
 # earned.index = ['total earnings', 'average earnings']
 # earned
-page = st.sidebar.selectbox("App Navigation", ["Hotspot Data", "Earnings Data"])
+page = st.sidebar.selectbox("App Navigation", ["Hotspot Data"])
 
 if page == 'Hotspot Data':
     city_name = st.sidebar.selectbox('Choose a city' ,options)
