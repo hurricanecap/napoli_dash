@@ -9,6 +9,7 @@ from scipy import spatial
 import time
 
 nap = '14LNByEqFx2LH7y63C9LbdSCYDY13h1WdWT3PtkBjzHP2ZcjvsD'
+nap2 = '13nphzGpMa1TtkBaRCUpw6QpdBbtaEExXSKW35AQqJvZko1qFKb'
 time_24_hrs_ago = (dt.datetime.now() - dt.timedelta(hours=24)).isoformat()
 time_30_d_ago = (dt.datetime.now() - dt.timedelta(days=30)).isoformat()
 user_agent = 'napoli.py/0.0.1'
@@ -112,7 +113,8 @@ def color_status(val):
         return f'background-color:{color}'
     
 url = 'https://api.helium.io/v1/accounts/' + nap +'/hotspots'
-data = sending_request(url, user_agent)
+url2 = 'https://api.helium.io/v1/accounts/' + nap2 +'/hotspots'
+data = sending_request(url, user_agent) + sending_request(url2, user_agent)
 new_hotspots = pd.DataFrame(data)
 
 options = []
