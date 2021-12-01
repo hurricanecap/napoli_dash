@@ -118,7 +118,7 @@ data = sending_request(url, user_agent) + sending_request(url2, user_agent)
 new_hotspots = pd.DataFrame(data)
 
 options = []
-new_hotspots['clntcity'] = [d.get('short_city').upper() for d in new_hotspots['geocode']]
+new_hotspots['clntcity'] = [d.get('short_city') for d in new_hotspots['geocode']]
 new_hotspots['clntaddr1'] = [d.get('short_street') for d in new_hotspots['geocode']]
 new_hotspots['cityid'] = [d.get('city_id') for d in new_hotspots['geocode']]
 
